@@ -32,3 +32,37 @@
   - 파일의 종류에 대한 자세한 정보를 출력
 
 - 
+
+* * *
+
+<h2 id='mission'>과제</h2>
+
+- 알파벳을 입력받아 입력 받은 알파벳이 대문자이면 소문자로, 소문자면 대문자로 변환하여 출력하고 0을 입력하면 종료되는 C언어 프로그램을 작성하라.
+
+```
+int main() {
+        char tmp;
+        char ans;
+
+        printf("문자 입력 : ");
+        scanf(" %c", &tmp);
+
+        while(true) {
+                if (tmp == '0') {
+                        return 0;
+                }
+                else if (tmp >= 'a' && tmp <= 'z') {
+                        ans = tmp - 32;
+                        printf("%c의 대문자는 %c입니다.\n", tmp, ans);
+                } else if (tmp >= 'A' && tmp <= 'Z') {
+                        ans = tmp + 32;
+                        printf("%c의 소문자는 %c입니다.\n", tmp, ans);
+                }
+
+                printf("문자 입력 : ");
+                scanf(" %c", &tmp);
+        }
+
+        return 0;
+}
+```

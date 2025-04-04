@@ -1,30 +1,85 @@
+# 4 Week
+
+* * *
+
 # 파일 사용
 
 * * *
 
 ## 목차
-1. 
 
-- 파일 복사 : `$cp`
+1. [파일 복사](#01)
 
-- 파일 이동 : `$mv`
-  - `$mv 파일 디렉터리` => 디렉터리로 이동
-  - `$mv 파일 변경할 파일명` => 파일명 변경
+2. [파일 이동](#02)
 
-- 파일 삭제 : `$rm`
-  - 
+3. [파일 삭제](#03)
 
-- 링크 : `$ln`
-  - `$cp`는 같은 내용의 다른 파일을 만든다면 `$ln`는 내용을 공유하는 다른 파일을 만드는 것
+4. [링크](#04)
 
-- 하드 링크
-  - 
+5. [파일 속성](#05)
 
-- 심볼릭 링크
- 
+6. [접근 권한](#06)
+
+7. [기타 파일 속성 변경](#07)
+
+8. [과제](#08)
+
 * * *
 
-- 파일 속석
+<h2 id='01'>파일 복사</h2>
+
+- 파일 복사 : `$ cp`
+  - 파일1을 파일2에 복사한다.<br />
+    ```
+    $ cp cs1.txt  cs2.txt
+    $ ls -l cs1.txt cs2.txt
+    -rw-r--r-- 1 skrmsp0423 skrmsp0423 0 Apr  5 00:08 cs1.txt
+    -rw-r--r-- 1 skrmsp0423 skrmsp0423 0 Apr  5 00:09 cs2.txt
+    ```
+
+  - 파일을 디렉터리로 복사
+    - `$ cp (파일) (디렉터리)`
+      - 파일을 지정된 디렉터리에 복사한다.
+      ```
+      $ cp cs1.txt /tmp
+      skrmsp0423@DESKTOP-TOOG12Q:~/0404$ ls -l /tmp/cs1.txt
+      -rw-r--r-- 1 skrmsp0423 skrmsp0423 0 Apr  5 00:18 /tmp/cs1.txt
+      ```
+     
+    - `$ cp 파일1 ... 파일n 디렉터리`
+      - 여러 개의 파일들을 지정된 디렉터리에 모두 복사한다.
+      ```
+      $ cp cs1.txt cs2.txt /tmp
+      $ ls -l /tmp/cs1.txt /tmp/cs2.txt
+      -rw-r--r-- 1 skrmsp0423 skrmsp0423 0 Apr  5 00:20 /tmp/cs1.txt
+      -rw-r--r-- 1 skrmsp0423 skrmsp0423 0 Apr  5 00:20 /tmp/cs2.txt
+      ```
+    - 디렉터리 전체 복사 : `$ cp -r`
+      - r은 리커전 옵션으로 디렉터리1 전체를 디렉터리2에 복사한다.
+      ```
+      $ cp -r test tmp
+      $ cd tmp
+      p$ ls -l
+      total 0
+      drwxr-xr-x 1 skrmsp0423 skrmsp0423 512 Apr  5 00:23 test
+      ```
+
+* * *
+
+<h2 id='02'>파일 이동</h2>
+
+- 파일 이동 : `$ mv (파일1) (파일2)`
+  - 파일1의 이름을 파일2로 변경한다.
+  ```
+  $ mv cs2.txt cs3.txt
+  $ ls -l cs2.txt cs3.txt
+  ls: cannot access 'cs2.txt': No such file or directory
+  -rw-r--r-- 1 skrmsp0423 skrmsp0423 0 Apr  5 00:09 cs3.txt
+  ```
+  
+* * *
+
+- 파일 속성
   |파일 속성|의미|
   |---|---|
   |블록 수|K 바이트 단위로 된 블록의 개수|

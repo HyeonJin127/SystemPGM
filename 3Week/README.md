@@ -117,7 +117,7 @@
 ![ls](./pic/ls.png)
 
 ```
-skrmsp0423@DESKTOP-TOOG12Q:~$ ls
+$ ls
 cs1.txt
 ```
 
@@ -184,28 +184,28 @@ cs1.txt
   - 표준입력 내용을 모두 파일에 저장한다. 파일이 없으면 새로 만든다.
   - 첫 줄부터 작성하며 줄 바꿈 이후에 이전 줄은 수정 못 한다.
 ```
-skrmsp0423@DESKTOP-TOOG12Q:~$ cat > cs1.txt
+$ cat > cs1.txt
 ...
-skrmsp0423@DESKTOP-TOOG12Q:~$ ls
+$ ls
 cs1.txt
 ```   
    
 - 간단한 파일 만들기 : `$ touch`
   - 파일 크기가 0인 이름만 있는 빈 파일을 만들어 준다.
 ```
-skrmsp0423@DESKTOP-TOOG12Q:~$ touch cs2.txt
-skrmsp0423@DESKTOP-TOOG12Q:~$ ls
+$ touch cs2.txt
+$ ls
 cs1.txt  cs2.txt
 ```   
    
   - 파일 수정 시간을 현재 시간으로 수정한다.
 ```
-skrmsp0423@DESKTOP-TOOG12Q:~$ ls -l
+$ ls -l
 total 0
 -rw-r--r-- 1 skrmsp0423 skrmsp0423 4 Mar 27 22:04 cs1.txt
 -rw-r--r-- 1 skrmsp0423 skrmsp0423 0 Mar 27 22:08 cs2.txt
-skrmsp0423@DESKTOP-TOOG12Q:~$ touch cs1.txt
-skrmsp0423@DESKTOP-TOOG12Q:~$ ls -l
+$ touch cs1.txt
+$ ls -l
 total 0
 -rw-r--r-- 1 skrmsp0423 skrmsp0423 4 Mar 27 22:10 cs1.txt
 -rw-r--r-- 1 skrmsp0423 skrmsp0423 0 Mar 27 22:08 cs2.txt
@@ -221,12 +221,12 @@ $ 명령어 파일*
 - 파일 내용 보기 : `$ cat`
   - 파일(들)의 내용을 그대로 화면에 출력. 파일을 지정하지 않으면 표준입력 내용을 그대로 화면에 출력.
 ```
-skrmsp0423@DESKTOP-TOOG12Q:~$ cat cs1.txt
+$ cat cs1.txt
 ...
 ```
 
 ```
-skrmsp0423@DESKTOP-TOOG12Q:~$ cat
+$ cat
 Hello World !
 Hello World !
 Bye!
@@ -252,7 +252,7 @@ Bye!
 
 1. `cat`을 이용해 파일 생성
 ```
-skrmsp0423@DESKTOP-TOOG12Q:~$ cat > mission.c
+$ cat > mission.c
 #include <stdio.h>
 
 int main() {
@@ -272,23 +272,23 @@ int main() {
 2. 리눅스에 gcc 설치하기
    - apt 업데이트하기
    ```
-   skrmsp0423@DESKTOP-TOOG12Q:~$ sudo apt update
+   $ sudo apt update
    ```
    
    - gcc 설치하기
    ```
-   skrmsp0423@DESKTOP-TOOG12Q:~$ sudo apt install gcc
+   $ sudo apt install gcc
    ```
    
 4. 실행
    - C 파일 컴파일하기
    ```
-   skrmsp0423@DESKTOP-TOOG12Q:~$ gcc mission.c -o mission
+   $ gcc mission.c -o mission
    ```
   
    - C 파일 실행하기
    ```
-   skrmsp0423@DESKTOP-TOOG12Q:~$ ./mission
+   $ ./mission
    학번을 입력하시오. : 2023864019
    이름을 입력하시오. : 김현진
    학번 :2023864019, 이름 : 김현진
